@@ -1,9 +1,5 @@
-from . import server
-import asyncio
-
 def main():
-    """Main entry point for the package."""
-    asyncio.run(server.main())
+    from .agent_server import main as agent_main
+    return agent_main()
 
-# Optionally expose other important items at package level
-__all__ = ['main', 'server']
+__all__ = ["main"]

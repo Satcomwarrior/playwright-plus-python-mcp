@@ -1,17 +1,20 @@
 [project]
 name = "playwright-server"
-version = "0.1.0"
-description = "\\A MCP server with playwright tools\\"
+version = "0.2.0"
+description = "Persistent browser computer MCP with authentication handoff and download support"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = [ "mcp>=1.1.2", "playwright"]
+dependencies = [ "mcp>=1.1.2", "playwright" ]
 [[project.authors]]
 name = "YUNYING"
 email = "qcyunying@gmail.com"
 
+[project.optional-dependencies]
+test = [ "pytest", "pytest-asyncio" ]
+
 [build-system]
-requires = [ "hatchling",]
+requires = [ "hatchling" ]
 build-backend = "hatchling.build"
 
 [project.scripts]
-playwright-server = "playwright_server:main"
+playwright-server = "playwright_server.agent_server:main"
